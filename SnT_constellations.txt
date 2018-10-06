@@ -1,3 +1,5 @@
+# This data was provided by Sky & Telescope and is current as of 2014
+# 
 # Each record below is a 32-character string ending in <crlf>.  Within each
 # record the fields have the following meanings:
 # 

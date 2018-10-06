@@ -23,7 +23,7 @@ $ pip install astroquery percache
 # Generate the constellationship.fab file
 $ ./generate_constellationship.py < SnT_constellations.txt > constellationship.fab
 
-# (optional) force doing new Vizier queries
+# (optional) force doing new VizieR queries
 $ rm .hip_cache
 ```
 

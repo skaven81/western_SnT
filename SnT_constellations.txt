@@ -1,43 +1,43 @@
-Each record below is a 32-character string ending in <crlf>.  Within each
-record the fields have the following meanings:
-
----------------------------------------------------
-Pos.  Meaning
----------------------------------------------------
-1-5   visual magnitude of star
-6     <blank>
-7-14  RA (hours and decimals, J2000.0)*
-15    <blank>
-16-23 North polar distance (deg. and dec. J2000.0)*
-24    <blank>
-25-28 Bayer Greek letter, maybe with superscript
-29    code for line weight*
-30-32 constellation*
-----------------------------------------------------
-
-*These are the only fields actually needed.
-
-The program should read the file from the start (4th record) to finish (a row of xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx).  Read the records in order, and use these rules for plotting:
-
-   (1) If the last FOUR characters (taken as a group) are the same as in the preceding record, this is a continuation of a line already started.
-
-   (2) If the last FOUR characters are any different from those in the preceding record, leave the last line at its previous end point and start a NEW line at the new coordinates given.  Its weight should correspond to the code given by the first of those last four characters (where 1 = heavy line, 2 = medium line, 3 or 4 = thin line).  There is no difference between weight 3 and weight 4; the 4 is occasionally needed simply to force the start of a new line.
-
-In most cases the coordinates are those of a real star.  But in a few cases the coordinates are not quite at, but only near the star. This produces a small gap where the line approaches or leaves a star.  We did this whenever a star does not technically belong to the constellation named and is simply used to complete the figure.
-
-%% Modified June 3, 2014
-%% For Aql, Boo, Cen, Ori, and Sgr changed line type 5 to 3.
-
-12345                            visual magnitude of star
-     6                           <blank>
-      78901234                   RA (hours and decimals, J2000.0)
-              5                  <blank>
-               67890123          North polar distance (deg. and dec. J2000.0)
-                       4         <blank>
-                        5678     Bayer greek letter, possibly superscript
-                            9    line weight
-                             012 constellation
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# Each record below is a 32-character string ending in <crlf>.  Within each
+# record the fields have the following meanings:
+# 
+# ---------------------------------------------------
+# Pos.  Meaning
+# ---------------------------------------------------
+# 1-5   visual magnitude of star
+# 6     <blank>
+# 7-14  RA (hours and decimals, J2000.0)*
+# 15    <blank>
+# 16-23 North polar distance (deg. and dec. J2000.0)*
+# 24    <blank>
+# 25-28 Bayer Greek letter, maybe with superscript
+# 29    code for line weight*
+# 30-32 constellation*
+# ----------------------------------------------------
+# 
+# *These are the only fields actually needed.
+# 
+# The program should read the file from the start (4th record) to finish (a row of xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx).  Read the records in order, and use these rules for plotting:
+# 
+#    (1) If the last FOUR characters (taken as a group) are the same as in the preceding record, this is a continuation of a line already started.
+# 
+#    (2) If the last FOUR characters are any different from those in the preceding record, leave the last line at its previous end point and start a NEW line at the new coordinates given.  Its weight should correspond to the code given by the first of those last four characters (where 1 = heavy line, 2 = medium line, 3 or 4 = thin line).  There is no difference between weight 3 and weight 4; the 4 is occasionally needed simply to force the start of a new line.
+# 
+# In most cases the coordinates are those of a real star.  But in a few cases the coordinates are not quite at, but only near the star. This produces a small gap where the line approaches or leaves a star.  We did this whenever a star does not technically belong to the constellation named and is simply used to complete the figure.
+# 
+# %% Modified June 3, 2014
+# %% For Aql, Boo, Cen, Ori, and Sgr changed line type 5 to 3.
+# 
+#2345                            visual magnitude of star
+#    6                           <blank>
+#     78901234                   RA (hours and decimals, J2000.0)
+#             5                  <blank>
+#              67890123          North polar distance (deg. and dec. J2000.0)
+#                      4         <blank>
+#                       5678     Bayer greek letter, possibly superscript
+#                           9    line weight
+#                            012 constellation
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
  2.06  0.13981  60.9094 alf 2And
  3.28  0.65547  59.1392 dlt 2And
  2.06  1.16219  54.3794 bet 2And
@@ -1036,5 +1036,4 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
  4.00  9.04078 156.3961 alf 3Vol
  4.44 19.47842  65.3350 alf 3Vul
  4.58 19.89103  65.9203 13  3Vul
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

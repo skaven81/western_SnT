@@ -1,0 +1,3 @@
+.hip_cache
+*.pyc
+python_venv/

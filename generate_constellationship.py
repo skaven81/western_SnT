@@ -113,8 +113,9 @@ if __name__ == '__main__':
         # on to output the constellationship data that was already gathered,
         # then exit non-zero.
         exitval = 1
-        print("Caught KeyboardInterrupt; ending processing and generating current constellationship", file=sys.stderr)
+        print("Caught KeyboardInterrupt", file=sys.stderr)
 
+    print("Generating constellationship data...", file=sys.stderr)
     for constellation in sorted(constellationship.keys()):
         # The format of constellationship.fab is:
         # <constellation name> <number of lines> startHIP endHIP startHIP endHIP ...

@@ -19,7 +19,20 @@ def snt_data():
     for line in sys.stdin:
         line = line.rstrip('\n\r')
         m = re.match(data_regex, line)
+
         if m:
+            # The S&T data has "Erj" as the continuation of Eridanus
+            # after pi.  This is because the S&T data has a gap around
+            # pi, since it lies slightly within Cetus.  S&T's own line
+            # drawing software requires that one of the last four characters
+            # change to signify a new line is to be started, rather than
+            # continuing from the previous point.  So they had to create
+            # a "fake" constellation to make their line drawing software
+            # start a new line after pi.  Hence 'Erj'.
+            constellation = m.group(7)
+            if constellation == 'Erj':
+                constellation = 'Eri'
+
             yield {
                 "mag": float(m.group(1).strip()),
                 "ra": round(float(m.group(2).strip()), 5),
@@ -28,7 +41,7 @@ def snt_data():
                 "bayer": m.group(4).strip(),
                 "superscript": None if m.group(5) == " " else m.group(5),
                 "weight": int(m.group(6)),
-                "constellation": m.group(7)
+                "constellation": constellation,
             }
         else:
             if not line.startswith('#'):

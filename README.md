@@ -1,6 +1,23 @@
 Sky & Telescope Stellarium Skyculture
 =====================================
 
+Installation
+------------
+
+To use this Skyculture, copy all of the files into `~/.stellarium/skycultures/western_SnT`
+(for Linux and Mac) or `%AppData%\Stellarium\skycultures\western_SnT` (for Windows).
+
+If you're so inclined, you can even just clone this repository directly into your
+`skycultures` directory:
+
+    $ cd ~/.stellarium/
+    $ mkdir -p skycultures
+    $ cd skycultures
+    $ git clone https://github.com/skaven81/western_SnT
+
+This will create a `western_SnT` directory under `skycultures` and you're ready to go.
+To "upgrade" to the latest version, just `cd` to the clone and run `git pull`.
+
 Constellation Shapes
 --------------------
 

@@ -112,7 +112,12 @@ if __name__ == '__main__':
 
             print("{bayer} {constellation} [ra={ra}, dec={dec}, mag={mag}]...".format(**vertex), file=sys.stderr, end='', flush=True)
             previous_hip = current_hip
-            current_hip = get_hip(ra=vertex['ra'], dec=vertex['dec'], mag=vertex['mag'])
+            # The S&T data is ambiguous for the location of the o2 (31) Cyg vertex,
+            # so we skip get_hip and assign it manually.
+            if vertex['constellation'] == 'Cyg' and vertex['bayer'] == '31-':
+                current_hip = 99848
+            else:
+                current_hip = get_hip(ra=vertex['ra'], dec=vertex['dec'], mag=vertex['mag'])
             if not current_hip:
                 raise ValueError("Unable to locate HIP for {bayer} {constellation} vertex [ra={ra}, dec={dec}, mag={mag}]".format(**vertex))
             print("HIP {}".format(current_hip), file=sys.stderr, flush=True)

@@ -61,3 +61,29 @@ in Pegasus) a half-degree short of the target star.  Stellarium's
 constellation line drawing feature requires that all lines terminate
 at stars.
 
+Star Names
+----------
+
+Sky & Telescope provided a Word document (`SnT_star_names.docx`) that contain
+the names of the stars used in Sky & Telescope publications.  A script is
+provided (`generate_star_names.py`) that is able to extract the star names
+from this file, look up each star in the Hipparcos catalog (using VizieR),
+and return a `star_names.fab` formatted output.
+
+### Usage
+
+To generate a new `star_names.fab` file:
+
+```
+# Create a Python virtualenv to work in
+$ virtualenv -p /usr/bin/python3 python_virtualenv
+$ . python_virtualenv/bin/activate
+$ pip install astroquery percache python-docx
+
+# Generate the star_names.fab file
+$ ./generate_star_names.py SnT_star_names.docx > star_names.fab
+
+# (optional) force doing new VizieR queries
+$ rm .hip_cache_stars
+```
+

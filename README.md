@@ -61,6 +61,12 @@ in Pegasus) a half-degree short of the target star.  Stellarium's
 constellation line drawing feature requires that all lines terminate
 at stars.
 
+#### Missing constellations
+
+Sky & Telescope does not provide constellation lines for Microscopium
+and Mensa.  Thus the computed `constellationship.fab` file contains
+only 86 of the 88 constellations.
+
 Star Names
 ----------
 

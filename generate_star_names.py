@@ -109,6 +109,8 @@ if __name__ == '__main__':
     stars["Herschel's Garnet Star"]['hip'] = 107259
     stars["Krueger 60"]['hip'] = 110893
     stars["Bradley 3077"]['hip'] = 114622
+    stars["Proxima Centauri"]['hip'] = 70890
+    stars["Alula Borealis"]['hip'] = 55219
 
     # Manually enter some stars that don't return results in VizieR
     stars["Alula Australis"]['hip'] = 55203
